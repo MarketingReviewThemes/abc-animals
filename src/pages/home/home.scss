@@ -1,3 +1,38 @@
 page-home {
+    .toggle-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
 
+    .full-card {
+        width: 80%;
+        height: 35vh;
+        margin: 5vh auto 0 auto;
+        text-align: center;
+
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+    .preview-set {
+        display: flex;
+        flex-direction: row;
+        margin: 5vh 0 0 0;
+        height: 60vh;
+        justify-content: center;
+        align-items: flex-start;
+
+        &__img {
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 5px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
 }

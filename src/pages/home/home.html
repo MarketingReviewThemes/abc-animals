@@ -1,18 +1,19 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+    <button class="toggle-button" ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+    <div class="full-card">
+        {{currentLetter}}
+        <img src="{{'assets/imgs/' + currentLetter + '.png'}}" alt="{{currentLetter}}">
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <div class="preview-set">
+        <div class="preview-set__img"
+             *ngFor="let preview of abcSet"
+             (click)="setCurrentLetter($event)" title="{{preview}}">
+            <img src="{{'assets/imgs/' + preview + '.png'}}" alt="{{preview}}">
+        </div>
+    </div>
+
 </ion-content>
