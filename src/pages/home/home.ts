@@ -12,8 +12,7 @@ export class HomePage {
   // ];
   public currentLetter : string = 'a';
   private abcSet : any = [
-    // 'a', 'b', 'c', 'd', 'e'
-    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'x', 'y', 'z'
+    'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
   ];
 
 
@@ -22,17 +21,19 @@ export class HomePage {
   }
 
   setCurrentLetter(event) {
-    this.currentLetter = event.target.alt;
-
+    if (event.target.alt) {
+      this.currentLetter = event.target.alt;
+    }
 
     //animate clicked button
-    event.target.animate([
-      { transform: 'scale(0.8)' },
-      { transform: 'scale(1)' }
-    ], {
-      duration: 750,
-      easing: 'ease-in'
-    });
+    //not working in ios
+    // event.target.animate([
+    //   { transform: 'scale(0.8)' },
+    //   { transform: 'scale(1)' }
+    // ], {
+    //   duration: 750,
+    //   easing: 'ease-in'
+    // });
     // console.log(event.target.alt);
   }
 

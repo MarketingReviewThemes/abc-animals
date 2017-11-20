@@ -1,33 +1,55 @@
 page-home {
+    .content {
+        background: #FFC107;
+    }
 
     .full-card {
         width: 80%;
-        height: 40vh;
+        height: 32vh;
         margin: 0 auto;
         text-align: center;
-        //animation-name: example;
-        //animation-duration: 4s;
+
 
         img {
             width: auto;
             height: 100%;
 
         }
+
+        @media (min-width: 600px) {
+            height: 55vh;
+        }
     }
     .preview-set {
         display: flex;
         flex-direction: row;
-        height: 55vh;
+        height: 60vh;
         justify-content: center;
         align-items: flex-start;
+        align-content: flex-start;
         flex-wrap: wrap;
+
+        @media (min-width: 600px) {
+            height: 35vh;
+        }
 
         &__img {
             border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            margin: 0 0.5% 0 0.5%;
-            width: 19%;
+            border: 1px solid rgba(234, 134, 4, 0.65);
+            margin: 0 0.5% 1% 0.5%;
             background: rgba(251, 250, 190, 0.62);
+            flex-basis: 19%;
+
+            &.selected {
+                background: rgba(234, 134, 4, 0.65);
+                animation-name: button-clicked-animation;
+                animation-duration: 0.3s;
+            }
+
+
+            @media (min-width: 600px) {
+                flex-basis: 9%;
+            }
 
             img {
                 width: 100%;
@@ -36,9 +58,7 @@ page-home {
         }
     }
 }
-//@keyframes example {
-//    0%   {background-color: red;}
-//    25%  {background-color: yellow;}
-//    50%  {background-color: blue;}
-//    100% {background-color: green;}
-//}
+@keyframes button-clicked-animation {
+    0%   { transform: scale(0.8); }
+    100%   { transform: scale(1); }
+}
