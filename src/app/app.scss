@@ -59,8 +59,13 @@
 }
 
 
-.button-ios {
+.button-ios, .button-md{
     background: transparent;
+    box-shadow: none;
+
+    &.activated {
+        box-shadow: none;
+    }
 }
 .ion-ios-menu:before {
     color: #000;
