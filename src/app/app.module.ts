@@ -7,7 +7,7 @@ import {HomePage} from '../pages/home/home';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {Media} from '@ionic-native/media';
+import { NativeAudio } from '@ionic-native/native-audio';
 
 @NgModule({
     declarations: [
@@ -26,7 +26,7 @@ import {Media} from '@ionic-native/media';
     providers: [
         StatusBar,
         SplashScreen,
-        Media,
+        NativeAudio,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })

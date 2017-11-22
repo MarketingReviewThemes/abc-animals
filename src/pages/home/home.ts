@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {Media, MediaObject} from '@ionic-native/media';
+import { NativeAudio } from '@ionic-native/native-audio';
+import set = Reflect.set;
 
 
 @Component({
@@ -14,20 +14,24 @@ export class HomePage {
     ];
 
 
-    constructor(public navCtrl: NavController, private media: Media) {
-
-    }
+    constructor(private nativeAudio: NativeAudio) { }
 
 
     setCurrentLetter(event) {
+
         if (event.target.alt) {
             this.currentLetter = event.target.alt;
             let mediaFile =  "assets/audio/" + this.currentLetter +".mp3";
 
-            const file: MediaObject = this.media.create(mediaFile);
+            this.nativeAudio.preloadSimple(this.currentLetter, mediaFile).then(()=> {
+                console.log("Success");
+            });
+            
             setTimeout(()=> {
-                file.play();
-            }, 500)
+                this.nativeAudio.play(this.currentLetter).then(() => {
+                    console.log("Played");
+                });
+            }, 500);
         }
 
     }
