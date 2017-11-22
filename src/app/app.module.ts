@@ -2,25 +2,25 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule} from '@angular/core';
 import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
-import {MyApp} from './app.component';
+import {ABCAnimals} from './app.component';
 import {HomePage} from '../pages/home/home';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {Media, MediaObject} from '@ionic-native/media';
+import {Media} from '@ionic-native/media';
 
 @NgModule({
     declarations: [
-        MyApp,
+        ABCAnimals,
         HomePage
     ],
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp),
+        IonicModule.forRoot(ABCAnimals),
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-        MyApp,
+        ABCAnimals,
         HomePage
     ],
     providers: [
