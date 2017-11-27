@@ -5,10 +5,30 @@ page-home {
     .scroll-content {
         padding: 0 16px;
     }
+    .gallery {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+
+        @media (orientation : landscape) {
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    // FOR CHILDREN left-handed
+    .left-handed {
+        .gallery {
+            @media (orientation : landscape) {
+                flex-direction: row-reverse;
+                padding: 0 0 0 40px;
+            }
+        }
+    }
 
     .full-card {
         width: 80%;
-        height: 32vh;
+        height: 34vh;
         margin: 0 auto;
         text-align: center;
 
@@ -16,24 +36,31 @@ page-home {
         img {
             width: auto;
             height: 100%;
-
         }
 
-        @media (min-width: 600px) {
-            height: 55vh;
+        @media (orientation : landscape) {
+            flex-basis: 30%;
+            width: 100%;
+            height: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
     }
     .preview-set {
         display: flex;
         flex-direction: row;
-        height: 60vh;
+        height: 66vh;
         justify-content: center;
         align-items: flex-start;
         align-content: flex-start;
         flex-wrap: wrap;
 
-        @media (min-width: 600px) {
-            height: 35vh;
+        @media (orientation : landscape) {
+            flex-basis: 60%;
+            height: auto;
         }
 
         &__img {
@@ -49,9 +76,12 @@ page-home {
                 animation-duration: 0.3s;
             }
 
-
-            @media (min-width: 600px) {
-                flex-basis: 9%;
+            @media (min-width: 560px) and
+            (orientation : landscape) {
+                flex-basis: 15%;
+            }
+            @media (min-width: 600px) and (orientation: portrait) {
+                flex-basis: 15%;
             }
 
             img {
@@ -60,7 +90,12 @@ page-home {
             }
         }
     }
+
+
 }
+
+
+
 @keyframes button-clicked-animation {
     0%   { transform: scale(0.8); }
     100%   { transform: scale(1); }

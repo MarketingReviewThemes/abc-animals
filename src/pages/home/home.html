@@ -1,3 +1,4 @@
+<!--<ion-content class="left-handed">-->
 <ion-content>
     <button class="toggle-button" ion-button menuToggle>
         <div class="icon-bar"></div>
@@ -5,16 +6,18 @@
         <div class="icon-bar"></div>
     </button>
 
-    <div class="full-card"
-         [ngClass]="{selectedFull: currentLetter}">
-        <img src="{{'assets/imgs/' + currentLetter + '.svg'}}" alt="{{currentLetter}}">
-    </div>
+    <div class="gallery">
+        <div class="full-card"
+             [ngClass]="{selectedFull: currentLetter}">
+            <img src="{{'assets/imgs/' + currentLetter + '.svg'}}" alt="{{currentLetter}}">
+        </div>
 
-    <div class="preview-set">
-        <div class="preview-set__img" *ngFor="let preview of abcSet"
-             (click)="setCurrentLetter($event)" title="{{preview}}"
-             [ngClass]="{selected: preview == currentLetter}">
-             <img src="{{'assets/imgs/' + preview + '.svg'}}" alt="{{preview}}">
+        <div class="preview-set">
+            <div class="preview-set__img" *ngFor="let preview of abcSet"
+                (click)="setCurrentLetter($event)" title="{{preview}}"
+                [ngClass]="{selected: preview == currentLetter}">
+                <img src="{{'assets/imgs/' + preview + '.svg'}}" alt="{{preview}}">
+            </div>
         </div>
     </div>
 

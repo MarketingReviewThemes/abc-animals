@@ -21,12 +21,13 @@ export class HomePage {
 
         if (event.target.alt) {
             this.currentLetter = event.target.alt;
+
             let mediaFile =  "assets/audio/" + this.currentLetter +".mp3";
 
             this.nativeAudio.preloadSimple(this.currentLetter, mediaFile).then(()=> {
                 console.log("Success");
             });
-            
+
             setTimeout(()=> {
                 this.nativeAudio.play(this.currentLetter).then(() => {
                     console.log("Played");
