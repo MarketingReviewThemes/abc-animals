@@ -1,0 +1,43 @@
+page-letter-details {
+    .details {
+        &__back {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        &__full-image {
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        &__title {
+            height: 20vh;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__prev {
+            //width: 60px;
+            margin: 0 0 20px 20px;
+        }
+        &__next {
+            //width: 60px;
+            margin: 0 20px 20px 0;
+        }
+    }
+
+}

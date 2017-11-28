@@ -4,15 +4,19 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 
 import {ABCAnimals} from './app.component';
 import {HomePage} from '../pages/home/home';
+import { LetterDetailsPage } from '../pages/letter-details/letter-details';
+
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import { NativeAudio } from '@ionic-native/native-audio';
+import { DataShareProvider } from '../providers/data-share/data-share';
 
 @NgModule({
     declarations: [
         ABCAnimals,
-        HomePage
+        HomePage,
+        LetterDetailsPage
     ],
     imports: [
         BrowserModule,
@@ -21,13 +25,15 @@ import { NativeAudio } from '@ionic-native/native-audio';
     bootstrap: [IonicApp],
     entryComponents: [
         ABCAnimals,
-        HomePage
+        HomePage,
+        LetterDetailsPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         NativeAudio,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        DataShareProvider
     ]
 })
 export class AppModule {

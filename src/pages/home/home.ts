@@ -1,5 +1,11 @@
-import {Component} from '@angular/core';
-import { NativeAudio } from '@ionic-native/native-audio';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { LetterDetailsPage } from '../../pages/letter-details/letter-details';
+import { DataShareProvider } from '../../providers/data-share/data-share';
+// import { NativeAudio } from '@ionic-native/native-audio';
+
+
+
 import set = Reflect.set;
 
 
@@ -8,33 +14,23 @@ import set = Reflect.set;
     templateUrl: 'home.html'
 })
 export class HomePage {
-    public currentLetter: string = 'a';
-    private abcSet: any = [
-        'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-    ];
 
 
-    constructor(private nativeAudio: NativeAudio) { }
+    constructor(private navCtrl: NavController,
+                private dataShare: DataShareProvider) { }
 
 
     setCurrentLetter(event) {
 
         if (event.target.alt) {
-            this.currentLetter = event.target.alt;
-
-            let mediaFile =  "assets/audio/" + this.currentLetter +".mp3";
-
-            this.nativeAudio.preloadSimple(this.currentLetter, mediaFile).then(()=> {
-                console.log("Success");
-            });
-
-            setTimeout(()=> {
-                this.nativeAudio.play(this.currentLetter).then(() => {
-                    console.log("Played");
-                });
-            }, 500);
+            this.dataShare.currentLetter.id = event.target.alt;
+            this.dataShare.currentLetter.name = event.target.title;
+            this.dataShare.playLetterAudio();
         }
+    }
 
+    gotoLetterDetailsPage() {
+        this.navCtrl.push(LetterDetailsPage);
     }
 
 }
