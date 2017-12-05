@@ -32,30 +32,24 @@
 //Menu button
 .toggle-button {
     position: absolute;
-    top: 36px;
-    left: 6px;
+    top: 20px;
+    left: 10px;
     display: block;
     cursor: pointer;
     outline: none !important;
+    width: 50px;
+    padding: 10px;
+    background: transparent;
+    transition: 0.3s all;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 
     &:active, &:focus {
         background: transparent;
     }
-
-    .icon-bar {
-        display: block;
-        width: 22px;
-        height: 2px;
-        border-radius: 1px;
-        background: #9c3f00;
-    }
-
-    .button-inner {
-        display: block;
-    }
-}
-.icon-bar + .icon-bar {
-    margin-top: 4px;
 }
 
 

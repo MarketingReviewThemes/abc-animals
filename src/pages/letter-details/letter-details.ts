@@ -24,6 +24,9 @@ export class LetterDetailsPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad LetterDetailsPage');
+        this.checkNextButton();
+        this.checkPrewButton();
+        this.dataShare.unloadAllLetters();
     }
 
     gotoBack() {
@@ -37,17 +40,15 @@ export class LetterDetailsPage {
 
     gotoPrev() {
         for(let i = 0; i <= this.dataShare.abcSet.length; i++) {
-
-            //If first letter
-            if(i == 1) {
-                this.prevButton = false;
-            } else {
-                this.prevButton = true;
-            }
+            this.nextButton = true;
 
             if(this.dataShare.currentLetter.id == this.dataShare.abcSet[i].id) {
                 this.dataShare.currentLetter.id = this.dataShare.abcSet[i-1].id;
                 this.dataShare.currentLetter.name = this.dataShare.abcSet[i-1].name;
+
+                //If first letter
+                this.checkPrewButton();
+                this.playAudio();
                 break;
             }
         }
@@ -56,19 +57,29 @@ export class LetterDetailsPage {
 
     gotoNext() {
         for(let i = 0; i <= this.dataShare.abcSet.length; i++) {
-
-            //If last letter
-            if(i+2 == this.dataShare.abcSet.length) {
-                this.nextButton = false;
-            } else {
-                this.nextButton = true;
-            }
+            this.prevButton = true;
 
             if(this.dataShare.currentLetter.id == this.dataShare.abcSet[i].id) {
                 this.dataShare.currentLetter.id = this.dataShare.abcSet[i+1].id;
                 this.dataShare.currentLetter.name = this.dataShare.abcSet[i+1].name;
+
+                //If last letter
+                this.checkNextButton();
+                this.playAudio();
                 break;
             }
+        }
+    }
+
+    checkPrewButton() {
+        if(this.dataShare.currentLetter.id == "a") {
+            this.prevButton = false;
+        }
+    }
+    
+    checkNextButton() {
+        if(this.dataShare.currentLetter.id == "z") {
+            this.nextButton = false;
         }
     }
 

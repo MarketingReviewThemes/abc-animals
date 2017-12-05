@@ -1,9 +1,7 @@
 <!--<ion-content class="left-handed">-->
 <ion-content>
-    <button class="toggle-button" ion-button menuToggle>
-        <div class="icon-bar"></div>
-        <div class="icon-bar"></div>
-        <div class="icon-bar"></div>
+    <button class="toggle-button" menuToggle>
+        <img src="assets/imgs/button_setting.svg">
     </button>
 
     <div class="gallery">
@@ -11,6 +9,9 @@
              [ngClass]="{selectedFull: dataShare.currentLetter.id}"
              (click)="gotoLetterDetailsPage()">
             <img src="{{'assets/imgs/' + dataShare.currentLetter.id + '.svg'}}">
+            <div class="more-button">
+                <img src="assets/imgs/button_find.svg">
+            </div>
         </div>
 
         <div class="preview-set">

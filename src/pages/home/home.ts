@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LetterDetailsPage } from '../../pages/letter-details/letter-details';
 import { DataShareProvider } from '../../providers/data-share/data-share';
-// import { NativeAudio } from '@ionic-native/native-audio';
-
 
 
 import set = Reflect.set;

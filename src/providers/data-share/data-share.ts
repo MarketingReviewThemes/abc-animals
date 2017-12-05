@@ -16,27 +16,27 @@ export class DataShareProvider {
         { id: 'a', name: 'alligator' },
         { id: 'b', name: 'bear' },
         { id: 'c', name: 'cat' },
-        { id: 'd', name: 'dolphin'},
-        { id: 'e', name: 'elefant'},
+        { id: 'd', name: 'dolphin' },
+        { id: 'e', name: 'elephant' },
         { id: 'f', name: 'frog' },
         { id: 'g', name: 'giraffe' },
-        { id: 'h', name: 'h-----' },
-        { id: 'i', name: 'i-----'},
+        { id: 'h', name: 'hippo' },
+        { id: 'i', name: 'iguana'},
         { id: 'j', name: 'jellyfish'},
         { id: 'k', name: 'koala' },
         { id: 'l', name: 'lizard' },
         { id: 'm', name: 'monkey' },
-        { id: 'n', name: 'n' },
-        { id: 'o', name: 'owel' },
+        { id: 'n', name: 'nightingale' },
+        { id: 'o', name: 'owl' },
         { id: 'p', name: 'panda' },
-        { id: 'q', name: 'q' },
-        { id: 'r', name: 'racun' },
+        { id: 'q', name: 'quail' },
+        { id: 'r', name: 'raccoon' },
         { id: 's', name: 'shark' },
         { id: 't', name: 'tucan' },
         { id: 'u', name: 'urchin' },
-        { id: 'v', name: 'v' },
-        { id: 'w', name: 'w' },
-        { id: 'x', name: 'x-ray' },
+        { id: 'v', name: 'vampir bat' },
+        { id: 'w', name: 'whale' },
+        { id: 'x', name: 'x-ray fish' },
         { id: 'y', name: 'yak' },
         { id: 'z', name: 'zebra' }
     ];
@@ -49,7 +49,7 @@ export class DataShareProvider {
         let mediaFile =  "assets/audio/" + this.currentLetter.id +".mp3";
 
         this.nativeAudio.preloadSimple(this.currentLetter.id, mediaFile).then(()=> {
-            console.log("Success");
+            console.log("Preload Success");
         });
 
         setTimeout(()=> {
@@ -57,6 +57,16 @@ export class DataShareProvider {
                 console.log("Played");
             });
         }, 500);
+
+
+    }
+
+    unloadAllLetters() {
+        for(let i = 0; i < this.abcSet.length; i++) {
+            this.nativeAudio.unload(this.abcSet[i].id).then(() => {
+                console.log("Unload Success: " + this.abcSet[i].id);
+            });
+        }
     }
 
 }

@@ -6,18 +6,22 @@
 -->
 
 <ion-content padding class="details">
-    <div class="details__back" (click)="gotoBack()">Back</div>
-    <div class="details__full-image"><img src="{{'assets/imgs/' + dataShare.currentLetter.id + '.svg'}}"></div>
+    <div class="details__back" (click)="gotoBack()">
+        <img src="assets/imgs/button_home.svg">
+    </div>
+    <div class="details__full-image">
+        <img src="{{'assets/imgs/' + dataShare.currentLetter.id + '.svg'}}" (click)="playAudio()">
+    </div>
     <div class="details__title">{{dataShare.currentLetter.name}}</div>
 </ion-content>
 <ion-footer class="footer">
     <div class="footer__prev">
-        <div (click)="gotoPrev()" *ngIf="prevButton">Prev</div>
+        <div (click)="gotoPrev()" *ngIf="prevButton"><img src="assets/imgs/button_left.svg"></div>
     </div>
     <div class="footer__play" (click)="playAudio()">
-        &rarr;
+        <img src="assets/imgs/button_play.svg">
     </div>
     <div class="footer__next">
-        <div (click)="gotoNext()" *ngIf="nextButton">Next</div>
+        <div (click)="gotoNext()" *ngIf="nextButton"><img src="assets/imgs/button_right.svg"></div>
     </div>
 </ion-footer>

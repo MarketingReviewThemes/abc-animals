@@ -27,11 +27,11 @@ page-home {
     }
 
     .full-card {
+        position: relative;
         width: 80%;
-        height: 34vh;
+        height: 32vh;
         margin: 0 auto;
         text-align: center;
-
 
         img {
             width: auto;
@@ -52,7 +52,7 @@ page-home {
     .preview-set {
         display: flex;
         flex-direction: row;
-        height: 66vh;
+        height: 68vh;
         justify-content: center;
         align-items: flex-start;
         align-content: flex-start;
@@ -90,7 +90,20 @@ page-home {
             }
         }
     }
+}
 
+.more-button {
+    position: absolute;
+    width: 35px;
+    bottom: -20px;
+    z-index: 10;
+    left: calc(50% - 12px);
+
+
+    img {
+        width: 100%;
+        height: auto;
+    }
 
 }
 

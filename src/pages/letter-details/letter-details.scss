@@ -1,13 +1,21 @@
 page-letter-details {
     .details {
+
         &__back {
             position: absolute;
             top: 20px;
-            left: 20px;
+            left: 10px;
+            width: 50px;
+            padding: 10px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
 
         &__full-image {
-            height: 80vh;
+            height: 60vh;
             display: flex;
             justify-content: center;
 
@@ -18,26 +26,57 @@ page-letter-details {
         }
 
         &__title {
-            height: 20vh;
             display: flex;
             justify-content: center;
+
+            font-size: 5vmax;
+            line-height: 24px;
+            text-transform: capitalize;
+            color: #d55500;
+
+            &:first-letter {
+                color: #007aff;
+            }
         }
 
     }
+
 
 
     .footer {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        &__prev {
-            //width: 60px;
-            margin: 0 0 20px 20px;
+        padding: 0 20px 10px 20px;
+
+        &:before {
+            display: none;
         }
-        &__next {
-            //width: 60px;
-            margin: 0 20px 20px 0;
+
+        @media (min-width: 800px) {
+            padding: 0 40px 30px 40px;
         }
+
+        
+        &__prev, &__play, &__next {
+            width: 50px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            @media (min-width: 800px) {
+                width: 80px;
+            }
+        }
+        &__play {
+            width: 65px;
+
+            @media (min-width: 800px) {
+                width: 100px;
+            }
+        }
+
     }
 
 }
