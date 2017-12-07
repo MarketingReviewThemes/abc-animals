@@ -14,7 +14,9 @@
             </div>
         </div>
 
+
         <div class="preview-set">
+            <div class="preloader" *ngIf="!showLettersSet"></div>
             <div class="preview-set__img" *ngFor="let preview of dataShare.abcSet"
                  (click)="setCurrentLetter($event)"
                  [ngClass]="{selected: preview.id == dataShare.currentLetter.id}">

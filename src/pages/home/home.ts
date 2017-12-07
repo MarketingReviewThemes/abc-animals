@@ -12,10 +12,17 @@ import set = Reflect.set;
     templateUrl: 'home.html'
 })
 export class HomePage {
+    public showLettersSet : boolean = false;
 
 
     constructor(private navCtrl: NavController,
                 private dataShare: DataShareProvider) { }
+
+    ionViewDidLoad() {
+        setTimeout(() => {
+            this.showLettersSet = true;
+        }, 1000);
+    }
 
 
     setCurrentLetter(event) {
